@@ -1,0 +1,143 @@
+/*
+    DEMO STYLE
+*/
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+/* ---------------------------------------------------
+   VARIABLES
+----------------------------------------------------- */
+
+$font-stack: 'Poppins', sans-serif;
+$primary-color: #7386D5;
+$selected-color: #6d7fcc;
+
+$font-color: #fff;
+$hover-background: #fff;
+
+$sidebar-min-width: 250px;
+$sidebar-max-width: 250px;
+
+
+//background: #fafafa;
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar { 
+    font-family: $font-stack;
+    min-width: $sidebar-min-width;
+    max-width: $sidebar-max-width;
+    background: $primary-color;
+    color: $font-color;
+    transition: all 0.3s;
+
+    .layout-item {
+        padding: 10px;
+        color: $font-color;
+        font-size: 1.1em;
+        display: block;
+        text-decoration: none;
+    }
+
+    .layout-item-hover{
+        color: $primary-color;
+        background: $hover-background;
+        text-decoration: none;
+    }
+
+   .sidebar-header {
+        padding: 20px;
+        background: $selected-color;
+    }
+
+    ul.components {
+        padding: 20px 0;
+        border-bottom: 1px solid #47748b;
+    }
+
+    ul p {
+        color: $font-color;
+        padding: 10px;
+    }
+    
+    ul li a {
+        @extend .layout-item;
+    }
+
+    ul li a:hover {
+       @extend .layout-item-hover;
+    }
+    
+    ul li.active > a, a[expanded="true"] {
+        color: $font-color;
+        background: $selected-color;
+    }
+
+    a[expanded="false"]:before {
+         content: '\e259';
+         display: block;
+         position: absolute;
+         left: $sidebar-max-width - 20px;
+         font-family: 'Glyphicons Halflings';
+         font-size: 0.6em;
+    }
+
+    a[expanded="true"]:before {
+        @extend a[expanded="false"];
+        content: '\e260';
+    }
+
+    .well {
+        min-height: auto;
+        padding: 0;
+        margin-bottom: 0px;
+        background-color: $selected-color !important;
+        border: 0px;
+        border-radius: 0px;
+        box-shadow: 0;
+        background-image: none;
+
+        ul a {
+            color: $font-color;
+            font-size: 0.9em !important;
+            padding-left: 30px !important;
+        }
+        
+    }
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+
+
