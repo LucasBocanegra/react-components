@@ -18,7 +18,9 @@
   max-width: 250px;
   background: #7386D5;
   color: #fff;
-  transition: all 0.3s; }
+  transition: all 0.3s;
+  box-shadow: 3px 0 0 0 #eee;
+  border-right: 1px groove #eee; }
   #sidebar .layout-item, #sidebar ul li a {
     padding: 10px;
     color: #fff;
@@ -63,6 +65,9 @@
       color: #fff;
       font-size: 0.9em !important;
       padding-left: 30px !important; }
+  #sidebar .glyphicon {
+    font-size: 1.1emo 0.3em;
+    margin-right: 10px; }
 
 #sidebar.active {
   margin-left: -250px; }
