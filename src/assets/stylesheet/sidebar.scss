@@ -8,11 +8,15 @@
    VARIABLES
 ----------------------------------------------------- */
 
-$primary-color: #7386D5;
-$selected-color: #6d7fcc;
-$hover-background: #fff;
+// $primary-color: #7386D5;
+$primary-color: #222d32;
+// $selected-color: #6d7fcc;
+$selected-color: #424d52;
+// $hover-background: #fff;
+$hover-background: #424d52;
+$font-hover-backgroud: #fff;
 
-$font-stack: 'Poppins', sans-serif;
+$font-stack: 'Source Sans Pro', 'Poppins', sans-serif;
 $font-color: #fff;
 $font-size: 1.1em;
 
@@ -51,7 +55,7 @@ $sidebar-max-width: 250px;
     }
 
     .layout-item-hover{
-        color: $primary-color;
+        color: $font-hover-backgroud;
         background: $hover-background;
         text-decoration: none;
     }
@@ -70,6 +74,13 @@ $sidebar-max-width: 250px;
         color: $font-color;
         padding: 10px;
     }
+
+    ul .sub-title p {
+        color: #979c9e;
+        padding: 10px;
+        background-color: #1e272b;
+        text-transform: uppercase;
+    }
     
     ul li a {
         @extend .layout-item;
@@ -82,6 +93,8 @@ $sidebar-max-width: 250px;
     ul li.active > a, a[expanded="true"] {
         color: $font-color;
         background: $selected-color;
+        border-left: 5px solid;
+        
     }
 
     a[expanded="false"]:before {

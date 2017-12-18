@@ -85,6 +85,9 @@ class SideBar extends Component {
 
                 {/* Sidebar Links */}
                 <ul className="list-unstyled components">
+                    <li className="sub-title">
+                        <p> Menu Principal </p>
+                    </li>
 
                     <SideBarItem index="home" value="Home" active="true" icon="home" />
                     <SideBarItem index="sobre" value="Sobre" icon="question-sign" />
